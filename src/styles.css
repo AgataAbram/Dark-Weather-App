@@ -33,10 +33,11 @@ h2 {
   font-size: 50px;
 }
 
-#celsius-link,
-#fahrenheit-link {
+.units {
   color: #30cfd0;
-  font-size: 25px;
+  font-size: 20px;
+  position: relative;
+  top: -20px;
 }
 
 .humidity-wind {
