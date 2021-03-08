@@ -71,6 +71,8 @@ function convertToFahrenheit(event) {
   event.preventDefault();
   let fahreinheitTemperature = (celsiusTemperature * 9 / 5 + 32);
   let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   temperatureElement.innerHTML = Math.round(fahreinheitTemperature);
 }
 
@@ -79,6 +81,8 @@ let celsiusTemperature = null;
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
