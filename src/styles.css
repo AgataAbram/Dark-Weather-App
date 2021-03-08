@@ -5,6 +5,11 @@ h5 {
   font-family: Geneva, sans-serif;
 }
 
+#description {
+  text-transform: capitalize;
+  font-size: 30px;
+}
+
 #current-date,
 #current-time {
   color: #30cfd0;
@@ -35,7 +40,7 @@ h2 {
 
 .units {
   color: #30cfd0;
-  font-size: 20px;
+  font-size: 10px;
   position: relative;
   top: -20px;
 }
