@@ -7,7 +7,7 @@ h5 {
 
 #description {
   text-transform: capitalize;
-  font-size: 30px;
+  font-size: 22px;
 }
 
 #current-date,
@@ -16,8 +16,8 @@ h5 {
   font-size: 14px;
 }
 
-h2 {
-  font-size: 30px;
+.city {
+  font-size: 35px;
 }
 
 .card {
@@ -35,14 +35,14 @@ h2 {
 
 .temperature {
   color: #30cfd0;
-  font-size: 50px;
+  font-size: 55px;
 }
 
 .units {
   color: #30cfd0;
   font-size: 10px;
   position: relative;
-  top: -20px;
+  top: -30px;
 }
 
 .humidity-wind {
