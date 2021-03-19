@@ -1,9 +1,8 @@
-let dateNow = document.querySelector("#current-date");
-let currentDate = new Date();
-let date = currentDate.getDate();
-let year = currentDate.getFullYear();
-
-let months = [
+function formatDate(timestamp) {
+  let currentDate = new Date(timestamp);
+  let date = currentDate.getDate();
+  
+  let months = [
   "January",
   "February",
   "March",
@@ -15,56 +14,84 @@ let months = [
   "September",
   "October",
   "November",
-  "December"
-];
+  "December" 
+  ];
+  let month = months[currentDate.getMonth()];
+  let year = currentDate.getFullYear();
 
-let month = months[currentDate.getMonth()];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  let day = days[currentDate.getDay()];
 
-dateNow.innerHTML = `${date} ${month} ${year}`;
-
-let timeNow = document.querySelector("#current-time");
-let currentTime = new Date();
-let hours = currentTime.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+  return `${day}, ${date} ${month} ${year}`;
 }
-let minutes = currentTime.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
+
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
 }
 
-let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-let day = days [currentTime.getDay()];
-
-timeNow.innerHTML = `${day} ${hours}:${minutes}`;
 
 
 function displayWeather(response) {
-  celsiusTemperature = response.data.main.temp;
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    celsiusTemperature
-  );
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].description;
+  let temperatureElement = document.querySelector("#temperature");
+  let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
 
+  celsiusTemperature = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-function search(event) {
-  event.preventDefault();
-  let city = document.querySelector("#city-input").value;
+function search(city) {
   let units = "metric";
   let apiKey = "9261fd58c04dc9377c51a75f0f6b5636";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeather);
 }
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input");
+  search(city.value);
+}
+
 let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", search);
+searchForm.addEventListener("submit", handleSubmit);
+
+search("Berlin");
+
+
 
 
 function convertToFahrenheit(event) {
