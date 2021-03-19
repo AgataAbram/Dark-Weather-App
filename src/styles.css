@@ -1,45 +1,64 @@
-.list-inline,
-.forcast-week,
-h2,
-h5 {
-  font-family: Geneva, sans-serif;
+body {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-#description {
-  text-transform: capitalize;
-  font-size: 22px;
+h2 {
+  font-size: 55px;
+  font-weight: 600;
+  margin: 30px 0px 0px 0px;
 }
 
-#current-date,
-#current-time {
-  color: #30cfd0;
-  font-size: 14px;
-}
-
-.city {
-  font-size: 35px;
+.card-body 
+  height: 600px;
 }
 
 .card {
   margin: 0 auto;
   display: block;
-  padding: 40px 0px 0px 0px;
+  padding: 15px 0px 0px 0px;
 }
 
 .card-body {
   background: linear-gradient(-15deg, #30cfd0, #330867);
-  color: rgba(255, 255, 255, 0.836);
+  color: #ffff;
   border-radius: 15px;
   text-align: center;
 }
 
+#date {
+  color: #ffff;
+  font-size: 20px;
+  margin: 0px 0px 0px 0px;
+}
+
+.weather-icon img {
+  height: 180px;
+  width: 180px;
+}
+
 .temperature {
-  color: #30cfd0;
-  font-size: 55px;
+  color: #ffff;
+  font-size: 110px;
+  position: relative;
+  top: 13px;
+}
+
+#description {
+  text-transform: capitalize;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.units {
+  color: #ffff;
+  font-size: 10px;
+  position: relative;
+  top: -58px;
+  left: -25px;
 }
 
 .temperature .active {
-  color: #30cfd0;
+  color: #ffff;
   cursor: default;
 }
 
@@ -47,26 +66,18 @@ h5 {
   text-decoration: none;
 }
 
-.units {
-  color: #30cfd0;
-  font-size: 10px;
-  position: relative;
-  top: -30px;
-}
-
 .humidity-wind {
-  color: rgba(255, 255, 255, 0.836);
-  font-size: 14px;
+  color: #c0c0c0;
+  font-size: 13px;
+  margin: 0px 0px 55px 0px;
 }
 
 h5 {
   font-size: 10px;
-  padding: 15px 0px 0px 0px;
-  color: #330867;
+  color: #c0c0c0;
 }
 
 a {
   font-size: 10px;
-  padding: 15px 0px 0px 0px;
-  color: rgba(255, 255, 255, 0.836);
+  color: #ffff;
 }
