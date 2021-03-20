@@ -1,15 +1,17 @@
 body {
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 h2 {
-  font-size: 55px;
+  font-size: 65px;
   font-weight: 600;
-  margin: 30px 0px 0px 0px;
+  margin: 30px 0px -15px 0px;
 }
 
-.card-body 
+.card-body {
   height: 600px;
+  width: 520px;
 }
 
 .card {
@@ -49,12 +51,23 @@ h2 {
   font-weight: 600;
 }
 
+.slash {
+  color: #c0c0c0;
+  font-weight: 100;
+}
+
 .units {
   color: #ffff;
-  font-size: 10px;
+  font-size: 30px;
   position: relative;
-  top: -58px;
+  top: -44px;
   left: -25px;
+}
+
+#celsius-link,
+#fahrenheit-link {
+  font-size: 30px;
+  color: #ffff;
 }
 
 .temperature .active {
