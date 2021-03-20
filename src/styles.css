@@ -10,7 +10,7 @@ h2 {
 }
 
 .card-body {
-  height: 600px;
+  height: 670px;
   width: 520px;
 }
 
@@ -30,12 +30,11 @@ h2 {
 #date {
   color: #ffff;
   font-size: 20px;
-  margin: 0px 0px 0px 0px;
 }
 
-.weather-icon img {
-  height: 180px;
-  width: 180px;
+img#icon {
+  height: 170px;
+  width: 170px;
 }
 
 .temperature {
@@ -82,12 +81,39 @@ h2 {
 .humidity-wind {
   color: #c0c0c0;
   font-size: 13px;
-  margin: 0px 0px 55px 0px;
+  margin: 0px 0px 60px 0px;
+}
+
+p {
+  font-size: 19px;
+  text-align: center;
+  color: #ffff;
+  margin: -20px 0px 0px 0px;
+}
+
+.weather-forecast img {
+  display: block;
+  margin: 0 auto;
+  height: 60px;
+  width: 60px;
+}
+
+.weather-forecast-temperature {
+  font-size: 17px;
+  text-align: center;
+  color: #c0c0c0;
+  margin: 0px 0px 10px 0px;
+}
+
+strong {
+  font-weight: 600;
+  color: #ffff;
 }
 
 h5 {
   font-size: 10px;
   color: #c0c0c0;
+  margin: 20px 0px 0px 0px;
 }
 
 a {

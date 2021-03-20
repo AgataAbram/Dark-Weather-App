@@ -73,12 +73,38 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  let forecast = null;
+  forecastElement.innerHTML = null;
+
+  for (let index = 0; index < 5; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML +=
+    `<div class="col">
+      <p>
+        ${formatHours(forecast.dt * 1000)}
+      </p>
+        <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+          <div class="weather-forecast-temperature">
+            <strong>${Math.round(forecast.main.temp_max)}°</strong>
+            ${Math.round(forecast.main.temp_min)}°
+           </div>
+     </div>
+    `;
+  }
+}
+
 function search(city) {
   let units = "metric";
   let apiKey = "9261fd58c04dc9377c51a75f0f6b5636";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
+
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -90,8 +116,6 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 search("Berlin");
-
-
 
 
 function convertToFahrenheit(event) {
