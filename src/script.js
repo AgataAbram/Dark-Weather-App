@@ -71,6 +71,32 @@ function displayWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  let code = response.data.weather[0].icon;
+  if (code === "11d" || code === "11n") {
+    iconElement.setAttribute("src", "Images/thunder.png");
+  } else if (code === "09d" || code === "09n") {
+    iconElement.setAttribute("src", "Images/few_rain.png");
+  } else if (code === "10d" || code === "10n") {
+    iconElement.setAttribute("src", "Images/rain.png");
+  } else if (code === "13d" || code === "13n") {
+    iconElement.setAttribute("src", "Images/snow.png");
+  } else if (code === "50d"|| code === "50n") {
+    iconElement.setAttribute("src", "Images/mist.png");
+  } else if (code === "01d") {
+    iconElement.setAttribute("src", "Images/sun.png");
+  } else if (code === "01n") {
+    iconElement.setAttribute("src", "Images/moon.png");
+  } else if (code === "02d") {
+    iconElement.setAttribute("src", "Images/few_clouds.png");
+  } else if (code === "02n") {
+    iconElement.setAttribute("src", "Images/moon_few_clouds.png");
+  } else if (code === "03d" || code === "03n") {
+    iconElement.setAttribute("src", "Images/cloud.png");
+  } else if (code === "04d" || code === "04n") {
+    iconElement.setAttribute("src", "Images/broken_clouds.png");
+  }
+  displayWeather(response);
 }
 
 function displayForecast(response) {
