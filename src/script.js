@@ -75,9 +75,9 @@ function displayWeather(response) {
   let code = response.data.weather[0].icon;
   if (code === "11d" || code === "11n") {
     iconElement.setAttribute("src", "Images/thunder.png");
-  } else if (code === "09d" || code === "09n") {
-    iconElement.setAttribute("src", "Images/few_rain.png");
   } else if (code === "10d" || code === "10n") {
+    iconElement.setAttribute("src", "Images/few_rain.png");
+  } else if (code === "09d" || code === "09n") {
     iconElement.setAttribute("src", "Images/rain.png");
   } else if (code === "13d" || code === "13n") {
     iconElement.setAttribute("src", "Images/snow.png");
