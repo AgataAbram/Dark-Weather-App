@@ -1,6 +1,10 @@
 body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  min-width: 510px;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 h2 {
@@ -9,28 +13,15 @@ h2 {
   margin: 30px 0px -15px 0px;
 }
 
-.card-body {
-  height: 670px;
-  width: 520px;
-  margin: 0 auto;
-  display: block;
-}
-
-.card {
-  margin: 0 auto;
-  display: block;
-  padding: 15px 0px 0px 0px;
-}
-
-.card-body {
-  background: linear-gradient(-15deg, #30cfd0, #330867);
+.container {
+  max-width: 600px;
+  margin-top: 15px;
+  margin-bottom: 50px;
   color: #ffff;
-  border-radius: 15px;
   text-align: center;
 }
 
 #date {
-  color: #ffff;
   font-size: 20px;
 }
 
@@ -53,7 +44,7 @@ img#icon {
 }
 
 .slash {
-  color: #c0c0c0;
+  color: #dddcdc;
   font-weight: 100;
 }
 
@@ -81,7 +72,7 @@ img#icon {
 }
 
 .humidity-wind {
-  color: #c0c0c0;
+  color: #dddcdc;
   font-size: 13px;
   margin: 0px 0px 60px 0px;
 }
@@ -89,7 +80,7 @@ img#icon {
 p {
   font-size: 19px;
   text-align: center;
-  color: #ffff;
+  color: #dddcdc;
   margin: -20px 0px 0px 0px;
 }
 
@@ -103,13 +94,13 @@ p {
 .weather-forecast-temperature {
   font-size: 17px;
   text-align: center;
-  color: #ffff;
+  color: #dddcdc;
   margin: 0px 0px 10px 0px;
 }
 
 h5 {
   font-size: 10px;
-  color: #c0c0c0;
+  color: #dddcdc;
   margin: 20px 0px 0px 0px;
 }
 
