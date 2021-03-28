@@ -74,26 +74,48 @@ function displayWeather(response) {
 
   let code = response.data.weather[0].icon;
   if (code === "11d" || code === "11n") {
+      document.body.style.background =
+    "linear-gradient(-15deg, #0d324d, #7f5a83)";
     iconElement.setAttribute("src", "Images/thunder.png");
   } else if (code === "10d" || code === "10n") {
+      document.body.style.background =
+    "linear-gradient(-15deg, #30cfd0, #330867)";
     iconElement.setAttribute("src", "Images/few_rain.png");
   } else if (code === "09d" || code === "09n") {
+      document.body.style.background =
+    "linear-gradient(-15deg, #1a3c58, #15016d)";
     iconElement.setAttribute("src", "Images/rain.png");
   } else if (code === "13d" || code === "13n") {
+      document.body.style.background =
+    "linear-gradient(-15deg, #85d030, #67085f)";
     iconElement.setAttribute("src", "Images/snow.png");
   } else if (code === "50d"|| code === "50n") {
+      document.body.style.background =
+    "linear-gradient(-15deg, #bdc3c7, #2c3e50)";
     iconElement.setAttribute("src", "Images/mist.png");
   } else if (code === "01d") {
+      document.body.style.background =
+    "linear-gradient(-15deg, #ff4e50, #f9d423)";
     iconElement.setAttribute("src", "Images/sun.png");
   } else if (code === "01n") {
+      document.body.style.background =
+    "linear-gradient(-15deg, #073c5f, #032033)";
     iconElement.setAttribute("src", "Images/moon.png");
   } else if (code === "02d") {
+      document.body.style.background =
+    "linear-gradient(-15deg, #DCE35B, #45B649)";
     iconElement.setAttribute("src", "Images/few_clouds.png");
   } else if (code === "02n") {
+      document.body.style.background =
+    "linear-gradient(-15deg, #525522, #143615)";
     iconElement.setAttribute("src", "Images/moon_few_clouds.png");
   } else if (code === "03d" || code === "03n") {
+      document.body.style.background =
+    "linear-gradient(-15deg, #007991, #78ffd6)";
     iconElement.setAttribute("src", "Images/cloud.png");
   } else if (code === "04d" || code === "04n") {
+        document.body.style.background =
+    "linear-gradient(-15deg, #a4bfef, #6a93cb)";
     iconElement.setAttribute("src", "Images/broken_clouds.png");
   }
   displayWeather(response);
@@ -101,6 +123,7 @@ function displayWeather(response) {
 
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
+
   let forecast = null;
   forecastElement.innerHTML = null;
 
@@ -168,3 +191,4 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
+
