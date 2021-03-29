@@ -47,6 +47,7 @@ function formatHours(timestamp) {
   }
 
   return `${hours}:${minutes}`;
+
 }
 
 
@@ -138,7 +139,7 @@ function displayWeather(response) {
     iconElement.setAttribute("src", "Images/moon_few_clouds.png");
   } else if (code === "03d" || code === "03n") {
       document.body.style.background =
-    "linear-gradient(-15deg, #007991, #78ffd6)";
+    "linear-gradient(-15deg, #78ffd6, #007991)";
     iconElement.setAttribute("src", "Images/cloud.png");
   } else if (code === "04d" || code === "04n") {
         document.body.style.background =
