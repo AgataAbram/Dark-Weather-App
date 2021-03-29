@@ -1,3 +1,5 @@
+//show date
+
 function formatDate(timestamp) {
   let currentDate = new Date(timestamp);
   let date = currentDate.getDate();
@@ -48,6 +50,8 @@ function formatHours(timestamp) {
 }
 
 
+//change icons
+
 let changeIcon = {
   "01d": "Images/sun.png",
   "01n": "Images/moon.png",
@@ -69,6 +73,8 @@ let changeIcon = {
   "50n": "Images/mist.png",
 }
 
+
+//show weather
 
 function displayWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
@@ -142,6 +148,9 @@ function displayWeather(response) {
   displayWeather(response);
 }
 
+
+//forecast
+
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
@@ -164,6 +173,9 @@ function displayForecast(response) {
   }
 }
 
+
+//city search
+
 function search(city) {
   let units = "metric";
   let apiKey = "9261fd58c04dc9377c51a75f0f6b5636";
@@ -174,6 +186,8 @@ function search(city) {
   axios.get(apiUrl).then(displayForecast);
 }
 
+
+//city input
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -187,6 +201,8 @@ searchForm.addEventListener("submit", handleSubmit);
 search("Berlin");
 
 
+//convert units
+
 function convertToFahrenheit(event) {
   event.preventDefault();
   let fahreinheitTemperature = (celsiusTemperature * 9 / 5 + 32);
@@ -196,8 +212,6 @@ function convertToFahrenheit(event) {
   temperatureElement.innerHTML = Math.round(fahreinheitTemperature);
 }
 
-let celsiusTemperature = null;
-
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
@@ -206,6 +220,7 @@ function convertToCelsius(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+let celsiusTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
