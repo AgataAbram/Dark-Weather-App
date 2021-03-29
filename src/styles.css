@@ -2,9 +2,9 @@ body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   min-width: 510px;
+  min-height: 720px;
   margin: 0;
   padding: 0;
-  display: flex;
 }
 
 h2 {
@@ -16,9 +16,10 @@ h2 {
 .container {
   max-width: 600px;
   margin-top: 15px;
-  margin-bottom: 50px;
   color: #ffff;
   text-align: center;
+  border-radius: 15px;
+  border: solid #ffff 1px;
 }
 
 #date {

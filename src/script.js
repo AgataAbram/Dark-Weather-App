@@ -48,6 +48,27 @@ function formatHours(timestamp) {
 }
 
 
+let changeIcon = {
+  "01d": "Images/sun.png",
+  "01n": "Images/moon.png",
+  "02d": "Images/few_clouds.png",
+  "02n": "Images/moon_few_clouds.png",
+  "03d": "Images/cloud.png",
+  "03n": "Images/cloud.png",
+  "04d": "Images/broken_clouds.png",
+  "04n": "Images/broken_clouds.png",
+  "09d": "Images/rain.png",
+  "09n": "Images/rain.png",
+  "10d": "Images/few_rain.png",
+  "10n": "Images/few_rain.png", 
+  "11d": "Images/thunder.png",
+  "11n": "Images/thunder.png",
+  "13d": "Images/snow.png",
+  "13n": "Images/snow.png",
+  "50d": "Images/mist.png",
+  "50n": "Images/mist.png",
+}
+
 
 function displayWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
@@ -87,7 +108,7 @@ function displayWeather(response) {
     iconElement.setAttribute("src", "Images/rain.png");
   } else if (code === "13d" || code === "13n") {
       document.body.style.background =
-    "linear-gradient(-15deg, #85d030, #67085f)";
+    "linear-gradient(-15deg, #67085f, #85d030";
     iconElement.setAttribute("src", "Images/snow.png");
   } else if (code === "50d"|| code === "50n") {
       document.body.style.background =
@@ -95,11 +116,11 @@ function displayWeather(response) {
     iconElement.setAttribute("src", "Images/mist.png");
   } else if (code === "01d") {
       document.body.style.background =
-    "linear-gradient(-15deg, #ff4e50, #f9d423)";
+    "linear-gradient(-15deg,#f9d423, #ff4e50)";
     iconElement.setAttribute("src", "Images/sun.png");
   } else if (code === "01n") {
       document.body.style.background =
-    "linear-gradient(-15deg, #073c5f, #032033)";
+    "linear-gradient(-15deg, #1f4e6d, #032033)";
     iconElement.setAttribute("src", "Images/moon.png");
   } else if (code === "02d") {
       document.body.style.background =
@@ -115,7 +136,7 @@ function displayWeather(response) {
     iconElement.setAttribute("src", "Images/cloud.png");
   } else if (code === "04d" || code === "04n") {
         document.body.style.background =
-    "linear-gradient(-15deg, #a4bfef, #6a93cb)";
+    "linear-gradient(-15deg, #a4bfef, #3275d1)";
     iconElement.setAttribute("src", "Images/broken_clouds.png");
   }
   displayWeather(response);
@@ -134,7 +155,7 @@ function displayForecast(response) {
       <p>
         ${formatHours(forecast.dt * 1000)}
       </p>
-        <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+        <img src="${changeIcon[forecast.weather[0].icon]}" alt="icon"/>
           <div class="weather-forecast-temperature">
             <strong>${Math.round(forecast.main.temp)}°</strong>
            </div>
