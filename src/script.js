@@ -131,7 +131,7 @@ function displayWeather(response) {
     iconElement.setAttribute("src", "Images/moon.png");
   } else if (code === "02d") {
       document.body.style.background =
-    "linear-gradient(-15deg, #DCE35B, #45B649)";
+    "linear-gradient(-15deg, #45B649, #DCE35B)";
     iconElement.setAttribute("src", "Images/few_clouds.png");
   } else if (code === "02n") {
       document.body.style.background =
