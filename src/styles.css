@@ -2,10 +2,17 @@ body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   min-width: 510px;
-  min-height: 730px;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h2 {
@@ -16,7 +23,6 @@ h2 {
 
 .container {
   max-width: 600px;
-  margin-top: 15px;
   text-align: center;
   border-radius: 15px;
   border: solid #ffffff 1px;
